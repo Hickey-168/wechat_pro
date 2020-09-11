@@ -1,8 +1,53 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+/**logs.wxss**/
+page{
+  overflow: hidden;
+  position: fixed;
+  background-image:url('https://edu-0906.oss-cn-beijing.aliyuncs.com/b1.jpeg') ;
+  margin:0px;
+  background-size: 100%  100%;
 }
-.log-item {
-  margin: 10rpx;
+
+.inputRoom {
+  width: 100vw;
+  height: 16vw;
+  border-top: 1px solid #cdcdcd;
+  background-color: #dbebeb;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+input {
+  width: 76vw;
+  height: 9.33vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+
+.leftMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #fff;
+  margin-left: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
+}
+
+.rightMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #96EB6A;
+  margin-right: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
 }

@@ -1,0 +1,33 @@
+/* pages/navi/navi.wxss */
+page{
+  overflow: hidden;
+  position: fixed;
+  background-image:url('https://edu-0906.oss-cn-beijing.aliyuncs.com/bp1.jpeg') ;
+  margin:0px;
+  background-size: 100%  100%;
+}
+.dialogbtn{
+  height: 78rpx;
+  border-radius: 32rpx;
+  font-size: 32rpx;
+  color: rgb(135, 182, 145);
+  line-height: 78rpx;
+  margin-top: 120rpx;
+  letter-spacing: 2rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lybtn{
+  height: 78rpx;
+  border-radius: 32rpx;
+  font-size: 32rpx;
+  color: rgb(135, 182, 145);
+  line-height: 78rpx;
+  margin-top: 630rpx;
+  letter-spacing: 2rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

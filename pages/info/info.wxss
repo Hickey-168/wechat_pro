@@ -1,0 +1,8 @@
+/* pages/info/info.wxss */
+page{
+  overflow: hidden;
+  position: fixed;
+  background-image:url('https://edu-0906.oss-cn-beijing.aliyuncs.com/bp2.jpeg') ;
+  margin:0px;
+  background-size: 100%  100%;
+}

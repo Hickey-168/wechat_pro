@@ -1,13 +1,35 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/navi/navi",
+    "pages/compre/compre",
+    "pages/info/info"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/logs/res/images/gn.png",
+        "iconPath": "pages/logs/res/images/gn.png",
+        "pagePath": "pages/navi/navi",
+        "text": "简钰"
+      },
+      {
+        "selectedIconPath": "pages/logs/res/images/grxx.png",
+        "iconPath": "pages/logs/res/images/grxx.png",
+        "pagePath": "pages/info/info",
+        "text": "个人信息"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

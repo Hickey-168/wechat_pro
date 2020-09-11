@@ -1,0 +1,57 @@
+/* pages/compre/compre.wxss */
+.container{
+  width: 90%;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(169, 207, 107);
+  margin-left: 40rpx;
+  margin-top: 72rpx;
+}
+.dzlan{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 148rpx;
+  background-color: rgb(236, 243, 242);
+}
+.plicon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.zficon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 20rpx;
+}
+.swicon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 360rpx;
+}
+.zan{
+  margin-top: 8rpx;
+  margin-left: 20rpx;
+  font-size: smaller;
+}
+.pl{
+  margin-top: 8rpx;
+  margin-left: 30rpx;
+  font-size: smaller;
+}
+
+.writely{
+  height: 64rpx;
+  border-radius: 24rpx;
+  color: rgb(10, 1, 1);
+  font-size: 32rpx;
+  margin-top: 32rpx;
+  letter-spacing: 2rpx;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
