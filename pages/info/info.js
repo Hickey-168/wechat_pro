@@ -1,12 +1,21 @@
 // pages/info/info.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    "bnrUrl": [{
+      "url": "../logs/res/images/lb1.jpg"
+    },  {
+      "url": "../logs/res/images/lb2.jpeg"
+    }, {
+      "url": "../logs/res/images/lb3.jpeg"
+    }]
   },
+
+  
 
   /**
    * 生命周期函数--监听页面加载

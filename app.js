@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    URL:'http://api.tianapi.com/txapi/tuling/index?key=31384fa76d91b69b95ca309c8f9de9bb&question='
   }
 })

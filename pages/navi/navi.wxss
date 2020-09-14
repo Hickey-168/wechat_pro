@@ -7,9 +7,12 @@ page{
   background-size: 100%  100%;
 }
 .dialogbtn{
+  animation: animated-border 1.5s infinite;
+  font-family: Arial;
   height: 78rpx;
+  border: 2px solid;
   border-radius: 32rpx;
-  font-size: 32rpx;
+  font-size: 27rpx;
   color: rgb(135, 182, 145);
   line-height: 78rpx;
   margin-top: 120rpx;
@@ -20,14 +23,26 @@ page{
 }
 
 .lybtn{
+  animation: animated-border 1.5s infinite;
+  font-family: Arial;
   height: 78rpx;
+  border: 2px solid;
   border-radius: 32rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: rgb(135, 182, 145);
   line-height: 78rpx;
-  margin-top: 630rpx;
+  margin-top: 830rpx;
   letter-spacing: 2rpx;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes animated-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(255,255,255,0);
+  }
 }

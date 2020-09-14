@@ -1,4 +1,6 @@
 {
+  "enablePullDownRefresh": true,
   "navigationBarTitleText": "简钰",
-  "usingComponents": {}
+  "usingComponents": {},
+  "backgroundColor": "#CCFF80"
 }

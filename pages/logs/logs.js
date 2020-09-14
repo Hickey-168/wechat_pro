@@ -5,7 +5,9 @@ var msgList = [];
 var windowWidth = wx.getSystemInfoSync().windowWidth;
 var windowHeight = wx.getSystemInfoSync().windowHeight;
 var keyHeight = 0;
-
+var question = '';
+var content ='';
+var that = this;
 /**
  * 初始化数据
  */
@@ -24,15 +26,6 @@ function initData(that) {
   })
 }
 
-/**
- * 计算msg总高度
- */
-// function calScrollHeight(that, keyHeight) {
-//   var query = wx.createSelectorQuery();
-//   query.select('.scrollMsg').boundingClientRect(function(rect) {
-//   }).exec();
-// }
-
 Page({
 
   /**
@@ -41,9 +34,39 @@ Page({
   data: {
     scrollHeight: '100vh',
     inputBottom: 0,
-    userInfo:{}
+    userInfo:{},
   },
 
+
+  giveResponse: function (that,question){
+    wx.request({
+      url: app.globalData.URL + question,
+      success:res=>{
+        if(res.data.code == 200){
+          that.setData({
+            content:res.data.newslist[0].reply
+          })
+        }else{
+          that.setData({
+            content:res.data.msg
+          })
+        }
+        console.log(this.data.content);
+        msgList.push({
+          speaker: 'server',
+          contentType: 'text',
+          content: this.data.content
+        });
+        console.log(this.data.content),
+        that.setData({
+          msgList: msgList
+        });
+      },
+      fail:res=>{
+        console.log(err)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -53,7 +76,6 @@ Page({
       userInfo: app.globalData.userInfo,
     });
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -107,19 +129,21 @@ Page({
   /**
    * 发送点击监听
    */
-  sendClick: function(e) {
+  sendClick: function(e){
     msgList.push({
       speaker: 'customer',
       contentType: 'text',
       content: e.detail.value
-    })
+    });
     inputVal = '';
+    question = e.detail.value;
     this.setData({
       msgList,
       inputVal
     });
+    console.log(question)
 
-
+    this.giveResponse(this,question)
   },
 
   /**

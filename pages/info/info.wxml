@@ -1,1 +1,25 @@
 <!--pages/info/info.wxml-->
+<view class ="container">
+<view class="intro">
+  <view class="wc1">
+    <image class="yjimg" src='../logs/res/images/zl.png'></image>
+      <text>意见反馈</text>
+      </view>
+  <view class="wc2">
+    <image class="kfimg" src='../logs/res/images/kf.png'></image>
+    <text>客服中心</text>
+      </view>
+  <view class="wc3">
+    <image class="gyimg" src='../logs/res/images/gywm.png'></image>
+      <text>关于我们</text>
+    </view>
+
+</view>
+<swiper class='home_swiper' indicator-dots='true' autoplay='true' interval='3000' duration='1000' circular='true'>
+  <block wx:for="{{bnrUrl}}" wx:for-index="index">
+    <swiper-item>
+      <image src='{{item.url}}' class='u-img-slide' mode='scaleToFill'></image>
+    </swiper-item>
+  </block>
+</swiper>
+</view>
