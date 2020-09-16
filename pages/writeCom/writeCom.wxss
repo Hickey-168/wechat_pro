@@ -1,0 +1,104 @@
+/* pages/writeCom.wxss */
+.container{
+  width: 90%;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(15, 14, 14);
+  margin-left: 40rpx;
+  margin-top: 72rpx;
+  border-radius: 18rpx;
+}
+.pllan{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 148rpx;
+  background-color: rgb(236, 243, 242);
+}
+.pl_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 120px;
+  margin-top: 10rpx;
+}
+.gdicon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 120px;
+}
+.swicon{
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 27rpx;
+}
+
+.lycon{
+  color: white;
+  font-size: 36rpx;
+}
+.toux{
+  width: 69rpx;
+  height: 69rpx;
+  margin-right: 30rpx;
+}
+.inputRoom {
+  width: 100vw;
+  height: 16vw;
+  border-top: 1px solid #cdcdcd;
+  background-color: #dbebeb;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+input {
+  width: 90vw;
+  height: 9.33vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+.showcom{
+  display: flex; 
+  justify-content: flex-start;
+  padding: 2vw 2vw 2vw 11vw;
+  margin-top: 51rpx;
+  margin-left: 20rpx;
+  background-color: rgb(229, 241, 240);
+  align-items: center;
+  border-radius: 18rpx;
+}
+
+/* ---------------------------- */
+/*模态框*/
+.modal{position:fixed; top:0; right:0; bottom:0; left:0; z-index:1000;}
+.modal-cancel{position:absolute; z-index:2000; top:0; right:0; bottom: 0; left:0; background:rgba(0,0,0,0.3);}
+.bottom-dialog-body{width:100%; position:absolute; z-index:3000; bottom:0; left:0;background:#dfdede;}
+/*动画前初始位置*/
+.bottom-positon{-webkit-transform:translateY(100%);transform:translateY(100%);}
+ 
+ 
+/* 底部弹出框 */
+.bottom-positon{
+  text-align: center;
+}
+.Mselect{
+  margin-bottom: 20rpx;
+}
+.Mselect view{
+  padding: 26rpx 0;
+  background: #fff;
+}
+.Mselect view:not(:last-of-type){
+  border-bottom: 1px solid #dfdede;
+}
+.Mcancel{
+  background: #fff;
+  padding: 26rpx 0;
+}

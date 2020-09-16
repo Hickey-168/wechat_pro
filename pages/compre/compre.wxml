@@ -2,16 +2,17 @@
 <view>
 <button class="writely" bindtap="writemsg">+ 写留言</button>
 </view>
-
-<view class="container">
+<!-- wx:for="{{list}}" -->
+<!-- {{item.message}} -->
+<view class="container" >
 <view class="include">
-<text class="lycon">{{lytext}}</text>
+<text class="lycon">我在故宫修文物</text>
 </view>
 <view class="dzlan">
 <text class="zan">赞</text>
 <text class="pl">评论</text>
 <image  class="swicon"src="{{dzicon}}" bindtap="clickz"></image>
-<image  class="plicon"src="/pages/logs/res/images/pl.png"></image>
-<image  class="zficon"src="/pages/logs/res/images/zf.png"></image>
+<image  class="plicon"src="/pages/logs/res/images/pl.png" bindtap="touchpl"></image>
+<image  class="zficon"src="/pages/logs/res/images/zf.png" bindtap="touchzf"></image>
 </view>
 </view>

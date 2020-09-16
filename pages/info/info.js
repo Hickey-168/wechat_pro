@@ -1,5 +1,7 @@
 // pages/info/info.js
 const app = getApp()
+var animation = wx.createAnimation({})
+var i = 1;
 Page({
 
   /**

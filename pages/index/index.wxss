@@ -1,4 +1,11 @@
 /**index.wxss**/
+page{
+  overflow: hidden;
+  position: fixed;
+  background-image:url('https://edu-0906.oss-cn-beijing.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720200916160746.jpg') ;
+  margin:0px;
+  background-size: 100%  100%;
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -18,4 +25,5 @@
 
 .usermotto {
   margin-top: 200px;
+  font-size: 18px;
 }

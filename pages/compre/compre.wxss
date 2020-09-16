@@ -4,9 +4,10 @@
   height: 300rpx;
   display: flex;
   flex-direction: column;
-  background-color: rgb(169, 207, 107);
+  background-color: rgb(15, 14, 14);
   margin-left: 40rpx;
   margin-top: 72rpx;
+  border-radius: 18rpx;
 }
 .dzlan{
   width: 100%;
@@ -54,4 +55,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.lycon{
+  color: white;
+  font-size: 36rpx;
 }
