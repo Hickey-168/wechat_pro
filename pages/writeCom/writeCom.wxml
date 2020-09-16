@@ -1,0 +1,45 @@
+<!--pages/writeCom.wxml-->
+<!-- wx:for="{{list}}" -->
+<!-- {{item.message}} -->
+<view>
+<view class="container" >
+  <view class="include">
+    <text class="lycon">我在故宫修文物</text>
+  </view>
+  <view class="pllan">
+    <image  class="swicon"src="/pages/logs/res/images/dzh.png" bindtap="clickz"></image>
+    <image  class="pl_icon"src="/pages/logs/res/images/pl2.png" bindtap="touchpl"></image>
+    <image  class="gdicon"src="/pages/logs/res/images/gd.png" bindtap="showModal"></image>
+  </view>
+</view>
+
+<!-- modal  -->
+  <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+    <view class="modal-cancel" bindtap="hideModal"></view>
+    <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+      <!--  -->
+      <view class='Mselect'>
+        <view bindtap='getOption1'>
+          更多秘密
+        </view>
+        <view bindtap='getOption2'>
+          举报
+        </view>
+      </view>
+      <view></view>
+      <view class='Mcancel' bindtap='mCancel'>
+        <text>取消</text>
+      </view>
+ 
+    </view>
+  </view>
+
+  <view class="showcom" wx:for="{{comlist}}">
+    <image src="../logs/res/images/nmtx.jpg" class="toux"></image>
+    <text>{{item.comment}}</text>
+  </view>
+
+  <view class='inputRoom' style='bottom: {{inputBottom}}'>
+    <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send'></input>
+  </view>
+</view>

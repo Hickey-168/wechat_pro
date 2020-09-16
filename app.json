@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/navi/navi",
     "pages/compre/compre",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/writeCom/writeCom"
   ],
   "tabBar": {
     "color": "#a9b7b7",
