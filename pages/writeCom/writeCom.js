@@ -119,7 +119,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8082/miniPro/superadmin/getmsgcomment',
+      url: getApp().globalData.myurl + '/getmsgcomment',
       method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
@@ -221,7 +221,7 @@ Page({
     })
     var comment = e.detail.value;
     wx.request({
-      url: 'http://localhost:8082/miniPro/superadmin/addcomment',
+      url: getApp().globalData.myurl + '/addcomment',
       method: 'POST',
       data: {
         "comment": JSON.stringify(comment),
@@ -243,22 +243,5 @@ Page({
         });
       }
     })
-    // wx.request({
-    //   url: 'http://localhost:8082/miniPro/superadmin/getmsgcomment',
-    //   method: 'GET',
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   data:{
-    //     "mid": that.data.mid
-    //   },
-    //   success: function(res) {
-    //     console.log(res.data)//打印到控制台
-    //     var list = res.data.msgCommentList;
-    //     that.setData({
-    //       commentlist: list
-    //     });
-    //   }
-    // })
   },
 })

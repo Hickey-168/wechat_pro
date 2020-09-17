@@ -35,6 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    URL:'http://api.tianapi.com/txapi/tuling/index?key=31384fa76d91b69b95ca309c8f9de9bb&question='
+    URL:'http://api.tianapi.com/txapi/tuling/index?key=31384fa76d91b69b95ca309c8f9de9bb&question=',
+    myurl: 'http://172.26.148.3:'+'8082/miniPro/superadmin'
   }
 })

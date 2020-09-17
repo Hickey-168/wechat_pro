@@ -1,4 +1,8 @@
 /* pages/compre/compre.wxss */
+page{
+  background-image: url('https://tse3-mm.cn.bing.net/th/id/OIP.vGp_EvFn-hnF5L36LxsaVgAAAA?pid=Api&rs=1');
+  background-size: 100%,100%;
+}
 .container{
   width: 90%;
   height: 300rpx;

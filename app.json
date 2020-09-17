@@ -5,7 +5,10 @@
     "pages/navi/navi",
     "pages/compre/compre",
     "pages/info/info",
-    "pages/writeCom/writeCom"
+    "pages/writeCom/writeCom",
+    "pages/writeMsg/writeMsg",
+    "pages/suggestion/suggestion",
+    "pages/aboutUs/aboutUs"
   ],
   "tabBar": {
     "color": "#a9b7b7",

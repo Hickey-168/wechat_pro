@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wechat.miniPro.dao.UserDao">  <!--指定mapper对应的dao,这样mapper就会实现dao对应的方法-->
+    <select id="queryUser" resultType="com.wechat.miniPro.entity.User"><!--编写sql语句-->
+		SELECT uid, wname, name
+		FROM user
+		ORDER BY uid
+		DESC
+	</select>
+    <select id="queryUserByUid" resultType="com.wechat.miniPro.entity.User">
+		SELECT uid, wname, name
+		FROM user
+		WHERE
+		uid=#{uid}
+	</select>
+	<select id="queryUserByWname" resultType="com.wechat.miniPro.entity.User">
+		SELECT uid, wname, name
+		FROM user
+		WHERE
+		wname=#{wname}
+	</select>
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="uid"
+            keyColumn="uid" parameterType="com.wechat.miniPro.entity.User">
+		INSERT INTO
+		user(uid, wname, name)
+		VALUES
+		(#{uid},#{wname},#{name})
+	</insert>
+    <update id="updateUser" parameterType="com.wechat.miniPro.entity.User">
+        update user
+        <set>
+            <if test="uid != null">uid=#{uid},</if>
+            <if test="wname != null">wname=#{wname},</if>
+            <if test="name != null">name=#{name}</if>
+        </set>
+        where uid=#{uid}
+    </update>
+    <delete id="deleteUser">
+		DELETE FROM
+		user
+		WHERE
+		uid = #{uid}
+	</delete>
+</mapper>

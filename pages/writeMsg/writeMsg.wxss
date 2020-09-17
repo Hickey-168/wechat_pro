@@ -1,1 +1,8 @@
 /* pages/writeMsg/writeMsg.wxss */
+page{
+  width:100%;
+  height:100%;
+  background-image: url('https://tse2-mm.cn.bing.net/th/id/OIP.UxAtFnNw5krkWwugkIHIJQHaNL?pid=Api&rs=1');
+  /* http://uploadfile.huiyi8.com/2014/0708/20140708045918341.jpg.270.jpg */
+  background-size: cover;
+}

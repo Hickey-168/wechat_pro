@@ -71,7 +71,7 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: 'http://localhost:8082/miniPro/superadmin/getallmsg',
+      url: getApp().globalData.myurl + '/getallmsg',
       method: 'GET',
       data:{},
       success: function(res) {

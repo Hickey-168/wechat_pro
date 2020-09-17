@@ -1,0 +1,9 @@
+<!--pages/suggestion.wxml-->
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder="欢迎提出您的想法，您的建议是我们一直进步的动力。。。" name="message" value="{{message}}"
+    minlength="{{min}}" maxlength="{{max}}" bindinput="inputs"/>
+    <text class="currentWordNumber">{{currentWordNumber|0}}/{{max}}</text>
+    <button form-type="submit"> 提交 </button>
+  </form>
+</view>

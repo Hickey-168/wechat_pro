@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wechat.miniPro.dao.MessageDao">  <!--指定mapper对应的dao,这样mapper就会实现dao对应的方法-->
+ 	<select id="queryMessage" resultType="com.wechat.miniPro.entity.Message"><!--编写sql语句-->
+		SELECT *
+		FROM message
+		ORDER BY mid
+		DESC
+	</select>
+    <select id="queryMessageByMid" resultType="com.wechat.miniPro.entity.Message">
+		SELECT *
+		FROM message
+		WHERE
+		mid=#{mid}
+	</select>
+	<select id="queryMessageByUid" resultType="com.wechat.miniPro.entity.Message">
+		SELECT *
+		FROM message
+		WHERE
+		uid=#{uid}
+	</select>
+    <insert id="insertMessage" useGeneratedKeys="true" keyProperty="mid"
+            keyColumn="mid" parameterType="com.wechat.miniPro.entity.Message">
+		INSERT INTO
+		message(mid, uid, message, mtime, likeNum, cnumber)
+		VALUES
+		(#{mid},#{uid},#{message},#{mtime},#{likeNum},#{cnumber})
+	</insert>
+    <update id="updateMessage" parameterType="com.wechat.miniPro.entity.Message">
+        update message
+        <set>
+            <if test="mid != null">mid=#{mid},</if>
+            <if test="uid != null">uid=#{uid},</if>
+            <if test="message != null">message=#{message}</if>
+        </set>
+        where mid=#{mid}
+    </update>
+    <delete id="deleteMessage">
+		DELETE FROM
+		message
+		WHERE
+		mid = #{mid}
+	</delete>
+</mapper>

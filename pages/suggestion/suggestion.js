@@ -1,41 +1,36 @@
-// pages/writeMsg/writeMsg.js
+// pages/suggestion.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-  },  
-  bindFormSubmit:function(e) {
-    var that = this;
-    var bindFormData = e.detail.value;
-    // wx.navigateTo({
-    //   url: '/pages/compre/compre',
-    // })
-    wx.navigateBack()
-    wx.request({
-      url: getApp().globalData.myurl + '/addmsg',
-      method: 'POST',
-      data: JSON.stringify(bindFormData),
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success: function (res) {
-        console.log(res.data)//打印到控制台
-        var toastText = "秘密发表成功"
-        if (res.data.addMsgSuc != true) {
-          toastText = '秘密发表失败';
-        }
-        wx.showToast({
-            title: toastText,
-            icon: '',
-            duration: 2000
-        });
-      }
-    })
+    min: 0,
+    max: 50,
   },
 
+  inputs: function (e) {
+    var value = e.detail.value;
+    var len = parseInt(value.length);
+    if (len > this.data.max) return;
+
+    this.setData({
+      currentWordNumber: len
+    });
+    if(this.data.currentWordNumber == 50){
+      wx.showModal({
+        title: '提示',
+        content: '您输入的次数已达上限',
+      })
+    }
+  },
+  bindFormSubmit:function(){
+    wx.showToast({
+      title: '谢谢您的建议！',
+      icon:'success',
+      duration:1500
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

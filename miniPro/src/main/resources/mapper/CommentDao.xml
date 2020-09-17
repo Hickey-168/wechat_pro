@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wechat.miniPro.dao.CommentDao">  <!--指定mapper对应的dao,这样mapper就会实现dao对应的方法-->
+ 	<select id="queryComment" resultType="com.wechat.miniPro.entity.Comment"><!--编写sql语句-->
+		SELECT *
+		FROM comment
+		ORDER BY cid
+		DESC
+	</select>
+    <select id="queryCommentByCid" resultType="com.wechat.miniPro.entity.Comment">
+		SELECT *
+		FROM comment
+		WHERE
+		cid=#{cid}
+	</select>
+	<select id="queryCommentByUid" resultType="com.wechat.miniPro.entity.Comment">
+		SELECT *
+		FROM comment
+		WHERE
+		uid=#{uid}
+	</select>
+	<select id="queryCommentByMid" resultType="com.wechat.miniPro.entity.Comment">
+		SELECT *
+		FROM comment
+		WHERE
+		mid=#{mid}
+	</select>
+    <insert id="insertComment" useGeneratedKeys="true" keyProperty="cid"
+            keyColumn="cid" parameterType="com.wechat.miniPro.entity.Comment">
+		INSERT INTO
+		comment(cid, mid, uid, ctime, comment)
+		VALUES
+		(#{cid},#{mid},#{uid},#{ctime},#{comment})
+	</insert>
+    <update id="updateComment" parameterType="com.wechat.miniPro.entity.Comment">
+        update comment 
+        <set>
+        	<if test="cid != null">cid=#{cid},</if>
+            <if test="mid != null">mid=#{mid},</if>
+            <if test="uid != null">uid=#{uid},</if>
+            <if test="ctime != null">ctime=#{ctime}</if>
+            <if test="comment != null">comment=#{comment}</if>
+        </set>
+        where cid=#{cid}
+    </update>
+    <delete id="deleteComment">
+		DELETE FROM
+		comment
+		WHERE
+		cid = #{cid}
+	</delete>
+</mapper>
