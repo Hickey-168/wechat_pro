@@ -5,7 +5,9 @@
     "pages/navi/navi",
     "pages/compre/compre",
     "pages/info/info",
-    "pages/writeCom/writeCom"
+    "pages/writeCom/writeCom",
+    "pages/suggestion/suggestion",
+    "pages/aboutUs/aboutUs"
   ],
   "tabBar": {
     "color": "#a9b7b7",
@@ -22,7 +24,7 @@
         "selectedIconPath": "pages/logs/res/images/grxx.png",
         "iconPath": "pages/logs/res/images/grxx.png",
         "pagePath": "pages/info/info",
-        "text": "个人信息"
+        "text": "个人中心"
       }
     ]
   },
