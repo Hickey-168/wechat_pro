@@ -4,7 +4,7 @@
 <view>
 <view class="container" >
   <view class="include">
-    <text class="lycon">我在故宫修文物</text>
+    <text class="lycon">{{message}}</text>
   </view>
   <view class="pllan">
     <image  class="swicon"src="/pages/logs/res/images/dzh.png" bindtap="clickz"></image>
@@ -34,12 +34,13 @@
     </view>
   </view>
 
-  <view class="showcom" wx:for="{{comlist}}">
+  <view class="showcom" wx:for="{{commentlist}}">
     <image src="../logs/res/images/nmtx.jpg" class="toux"></image>
     <text>{{item.comment}}</text>
   </view>
 
   <view class='inputRoom' style='bottom: {{inputBottom}}'>
-    <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send'></input>
+    <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send'>
+    </input>
   </view>
 </view>

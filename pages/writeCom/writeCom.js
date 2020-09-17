@@ -1,9 +1,9 @@
 // pages/writeCom.js
 var inputVal = '';
-var comlist =[];
 var windowWidth = wx.getSystemInfoSync().windowWidth;
 var windowHeight = wx.getSystemInfoSync().windowHeight;
 var keyHeight = 0;
+var commentlist = [];
 
 Page({
 
@@ -17,6 +17,8 @@ Page({
  
     hideFlag: true,//true-隐藏  false-显示
     animationData: {},//
+    message:'test',
+    mid: undefined//留言id
   },
 
   //点击选项1
@@ -96,8 +98,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function (e) {
+    var that = this;
+    that.setData({
+      mid: e.mid,
+      message: e.message
+    })
   },
 
   /**
@@ -111,7 +117,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8082/miniPro/superadmin/getmsgcomment',
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      data:{
+        "mid": that.data.mid
+      },
+      success: function(res) {
+        console.log(res.data)//打印到控制台
+        var list = res.data.msgCommentList;
+        if(list == null) {
+          var toastText = '获取数据失败' + res.data.errMsg;
+          wx.showToast({
+            title: toastText,
+            icon:'',
+            duration: 2000
+          });
+        } else {
+          that.setData({
+            commentlist: list
+          });
+        };
+      }
+    })
   },
 
   /**
@@ -174,13 +206,59 @@ Page({
   },
 
   sendClick: function(e){
-    comlist.push({
-      comment:e.detail.value
-    })
+    var that = this;
     inputVal ='';
     this.setData({
       inputVal,
-      comlist
     });
+    var commentdemo = ({
+      "mid": that.data.mid,
+      "comment": e.detail.value
+    })
+    that.data.commentlist.push(commentdemo);
+    this.setData({
+      commentlist:that.data.commentlist
+    })
+    var comment = e.detail.value;
+    wx.request({
+      url: 'http://localhost:8082/miniPro/superadmin/addcomment',
+      method: 'POST',
+      data: {
+        "comment": JSON.stringify(comment),
+        "mid": that.data.mid
+      },
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        console.log(res.data)//打印到控制台
+        var toastText = "评论发表成功"
+        if (res.data.addCommentSuc != true) {
+          toastText = '评论发表失败';
+        }
+        wx.showToast({
+            title: toastText,
+            icon: '',
+            duration: 2000
+        });
+      }
+    })
+    // wx.request({
+    //   url: 'http://localhost:8082/miniPro/superadmin/getmsgcomment',
+    //   method: 'GET',
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   data:{
+    //     "mid": that.data.mid
+    //   },
+    //   success: function(res) {
+    //     console.log(res.data)//打印到控制台
+    //     var list = res.data.msgCommentList;
+    //     that.setData({
+    //       commentlist: list
+    //     });
+    //   }
+    // })
   },
 })

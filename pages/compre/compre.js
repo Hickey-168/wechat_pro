@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-      dzicon:"/pages/logs/res/images/dzq.png"
+      dzicon:"/pages/logs/res/images/dzq.png" ,
+      list: ''
   },
 
   clickz:function(){
@@ -21,13 +22,6 @@ Page({
       })
       dz = true;
     }
-  },
-
-  //跳转到评论界面
-  touchpl:function(){
-    wx.navigateTo({
-      url: '/pages/writeCom/writeCom',
-    })
   },
 
   //调用分享朋友圈API
@@ -49,7 +43,7 @@ Page({
   {
     wx.showNavigationBarLoading() //在标题栏中显示加载
     
-    //模拟加载
+    模拟加载
     setTimeout(function()
     {
       // complete
@@ -74,33 +68,33 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  // onShow: function () {
-  //   var that = this;
-  //   wx.request({
-  //     url: 'http://localhost:8082/miniPro/superadmin/getallmsg',
-  //     method: 'GET',
-  //     data:{},
-  //     success: function(res) {
-  //       var list = res.data.allMessageList;
-  //       if(list == null) {
-  //         var toastText = '获取数据失败' + res.data.errMsg;
-  //         wx.showToast({
-  //           title: toastText,
-  //           icon:'',
-  //           duration: 2000
-  //         });
-  //       } else {
-  //         that.setData({
-  //           list: list
-  //         });
-  //       };
-  //     }
-  //   })
-  // },
-
   onShow: function () {
-
+    var that = this;
+    wx.request({
+      url: 'http://localhost:8082/miniPro/superadmin/getallmsg',
+      method: 'GET',
+      data:{},
+      success: function(res) {
+        console.log(res.data)//打印到控制台
+        var list = res.data.allMessageList;
+        if(list == null) {
+          var toastText = '获取数据失败' + res.data.errMsg;
+          wx.showToast({
+            title: toastText,
+            icon:'',
+            duration: 2000
+          });
+        } else {
+          that.setData({
+            list: list
+          });
+        };
+      }
+    })
   },
+  // onShow: function () {
+
+  // },
   /**
    * 生命周期函数--监听页面隐藏
    */
